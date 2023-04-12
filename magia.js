@@ -53,4 +53,4 @@ function actualizarMediciones() {
 }
 
 // Llamar a la función para actualizar las mediciones cada 50 segundos
-setInterval(actualizarMediciones, 50000);
+setInterval(actualizarMediciones, 500);
