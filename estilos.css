@@ -1,70 +1,140 @@
 h2 {
     text-align: center;
-  }
-  
-  .tempe {
+}
+
+.tempe {
     margin-bottom: 5%;
-  }
-  .vien {
+}
+
+.vien {
     margin-bottom: 5%;
-  }
-  .hume {
+}
+
+.hume {
     margin-bottom: 5%;
-  }
-  #brujula {
+}
+
+#brujula {
     position: relative;
     width: 200px;
     height: 200px;
-    border: 2px solid #999;
+    border: 2px solid black;
     border-radius: 50%;
-    box-shadow: 0 0 10px #666;
-    overflow: hidden;
-  }
-  
-  #brujula img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform-origin: center center;
-  }
-  
-  .punto-cardinal {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #fff;
-    color: #000;
-    text-align: center;
-    font-size: 16px;
-    line-height: 30px;
-    font-weight: bold;
-  }
-  
-  #norte {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%) translateY(-15px);
-  }
-  
-  #sur {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) translateY(15px);
-  }
-  
-  #este {
     top: 50%;
-    right: 0;
-    transform: translateX(15px) translateY(-50%);
+    left: 42%;
+}
+@media only screen and (max-width: 600px) {
+    #brujula {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
-  
-  #oeste {
-    top: 50%;
-    left: 0;
-    transform: translateX(-15px) translateY(-50%);
-  }
-  
 
-  
- 
+.punto-cardinal {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 20px;
+    line-height: 20px;
+    background-color: white;
+    color: black;
+}
+
+#norte {
+    top: 0;
+    left: calc(50% - 10px);
+}
+
+#este {
+    top: calc(50% - 10px);
+    right: 0;
+}
+
+#sur {
+    bottom: 0;
+    left: calc(50% - 10px);
+}
+
+#oeste {
+    top: calc(50% - 10px);
+    left: 0;
+}
+
+/* Establecer el estilo de la aguja */
+.aguja {
+    background-color: transparent;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width:50px 5px 0 5px;
+    border-color: red transparent transparent transparent;
+    position: absolute;
+    top: calc(50% + 15px);
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Establecer la rotación de la aguja según la dirección proporcionada por la API */
+.direccion-norte .aguja {
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.direccion-este .aguja {
+    transform: translate(-50%, -100%) rotate(90deg);
+}
+
+.direccion-sur .aguja {
+    transform: translate(-50%, -100%) rotate(180deg);
+}
+
+.direccion-oeste .aguja {
+    transform: translate(-50%, -100%) rotate(270deg);
+}
+
+.aguja.direccion-norte {
+    transform: translate(-50%, 0) rotate(0deg) scale(1.1);
+}
+
+.aguja.direccion-este {
+    transform: translate(-50%, 0) rotate(90deg) scale(1.1);
+}
+
+.aguja.direccion-sur {
+    transform: translate(-50%, 0) rotate(180deg) scale(1.1);
+}
+
+.aguja.direccion-oeste {
+    transform: translate(-50%, 0) rotate(270deg) scale(1.1);
+}
+
+#direccion-viento {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.rayitas-tiempo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+}
+
+.rayita-tiempo {
+    position: absolute;
+    height: 100px;
+    bottom: 1px;
+    width: 2px;
+    background-color: black;
+    transform-origin: bottom center;
+    opacity: 0.2;
+}
