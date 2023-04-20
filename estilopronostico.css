@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .current-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .current-weather img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .current-weather p {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .pronostico-extendido {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .pronostico-extendido li {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    flex-basis: calc(20% - 10px);
+    margin-right: 10px;
+  }
+  
+  .pronostico-extendido li:last-child {
+    margin-right: 0;
+  }
+  
+  .pronostico-extendido p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .pronostico-extendido img {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Estilos para pantalla grande */
+.container {
+    max-width: 800px;
+  }
+  
+  .current-weather img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .pronostico-extendido li {
+    flex-basis: calc(20% - 10px);
+  }
+  
+  .pronostico-extendido img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Estilos para pantalla pequeña */
+  @media (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .current-weather {
+      flex-direction: column;
+    }
+  
+    .current-weather img {
+      margin-bottom: 10px;
+    }
+  
+    .pronostico-extendido {
+      flex-wrap: wrap;
+    }
+  
+    .pronostico-extendido li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .pronostico-extendido p {
+      font-size: 14px;
+    }
+  
+    .pronostico-extendido img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  nav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    float: left;
+  }
+  
+  nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  nav li a:hover {
+    background-color: #ddd;
+    color: black;
+  }  

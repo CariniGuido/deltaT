@@ -1,50 +1,50 @@
 function generarGrafico(temperaturas, humedades, deltas) {
-    // Obtener el elemento canvas donde se mostrará el gráfico
-    const canvas = document.getElementById('grafico');
-  
-    // Crear el objeto Chart y configurarlo
-    const chart = new Chart(canvas, {
-      type: 'scatter',
-      data: {
-        datasets: [{
-          label: 'Delta T vs. Temperatura y Humedad',
-          data: temperaturas.map((t, i) => ({x: t, y: humedades[i], r: 5, delta: deltas[i]})),
-          backgroundColor: 'rgba(0, 0, 0, 0.2)',
-          borderColor: 'rgba(0, 0, 0, 0.5)',
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          x: {
-            title: {
-              display: true,
-              text: 'Temperatura (°C)'
-            },
-            min: 0,
-            max: 40
+  // Obtener el elemento canvas donde se mostrará el gráfico
+  const canvas = document.getElementById('grafico');
+
+  // Crear el objeto Chart y configurarlo
+  const chart = new Chart(canvas, {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        label: 'Delta T vs. Temperatura y Humedad',
+        data: temperaturas.map((t, i) => ({x: t, y: humedades[i], r: 5, delta: deltas[i]})),
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+        borderColor: 'rgba(0, 0, 0, 0.5)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: 'Temperatura (°C)'
           },
-          y: {
-            title: {
-              display: true,
-              text: 'Humedad Relativa (%)'
-            },
-            min: 0,
-            max: 100
-          }
+          min: 0,
+          max: 40
         },
-        plugins: {
-          tooltip: {
-            callbacks: {
-              label: function(context) {
-                return `Delta T: ${context.dataset.data[context.dataIndex].delta.toFixed(1)}`;
-              }
+        y: {
+          title: {
+            display: true,
+            text: 'Humedad Relativa (%)'
+          },
+          min: 0,
+          max: 100
+        }
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return `Delta T: ${context.dataset.data[context.dataIndex].delta.toFixed(1)}`;
             }
           }
         }
       }
-    });
-  }
+    }
+  });
+}
 
 function crearRayitasTiempo() {
     var rayitasTiempo = document.querySelector('.rayitas-tiempo');
@@ -120,16 +120,16 @@ let deltas = [];
     deltas.push(deltaT);
     temperaturas.push(temperaturaActual);
     humedades.push(humedadActual);
-    let estadoDeltaT;
+     let estadoDeltaT;
 
-    // Comprobar si Delta T está en el rango óptimo
-    if (deltaT >= 2 && deltaT <= 8) {
-        estadoDeltaT = "óptimo para pulverización";
-    } else if (deltaT < 2 || deltaT > 10) {
-        estadoDeltaT = "fuera del rango óptimo para pulverización";
-    }
-    
-    document.getElementById("estadodelta").innerHTML = `El estado de Delta T es ${estadoDeltaT}.`;
+// Comprobar si Delta T está en el rango óptimo
+if (deltaT >= 2 && deltaT <= 8) {
+    estadoDeltaT = "óptimo para pulverización";
+} else if (deltaT < 2 || deltaT > 10) {
+    estadoDeltaT = "fuera del rango óptimo para pulverización";
+}
+
+document.getElementById("estadodelta").innerHTML = `El estado de Delta T es ${estadoDeltaT}.`;
     // Crear gráfico de Delta T con temperatura y humedad relativa
     const chartData = {
         labels: temperaturas,

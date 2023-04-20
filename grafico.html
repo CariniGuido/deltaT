@@ -5,9 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
+ <link rel="stylesheet" href="estilocuadro.css">
+ 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
-    <link rel="stylesheet" href="estilos.css">
+   
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
 
@@ -16,6 +17,7 @@
 </head>
 
 <body>
+
     <nav>
         <ul>
           <li><a href="tabla.html">Tablas</a></li>
@@ -24,29 +26,13 @@
           <li><a href="pronostico.html">Pronostico</a></li>
         </ul>
       </nav>
-    <div class="tempe">
-        <h2>Temperatura</h2>
-        <div id="temperatura-gauge"></div>
-    </div>
-    <div class="vien">
-        <h2>Velocidad del viento</h2>
-        <div id="viento-gauge"></div>
-    </div>
-    <div class="hume">
-        <h2>Humedad</h2>
-        <div id="humedad-gauge"></div>
-    </div>
-    <div id="brujula">
-        <div id="norte" class="punto-cardinal">N</div>
-        <div id="este" class="punto-cardinal">E</div>
-        <div id="sur" class="punto-cardinal">S</div>
-        <div id="oeste" class="punto-cardinal">O</div>
-        <div class="aguja"></div>
+      
+  
         <p id="direccion-viento"></p>
         <div class="rayitas-tiempo"> </div>
 
     </div>
-
+   
     <p id="estadodelta"></p>
     <canvas id="grafico"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.6.1/justgage.js"
@@ -57,3 +43,5 @@
 </body>
 
 </html>
+   
+ 

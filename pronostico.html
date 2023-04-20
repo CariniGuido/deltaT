@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Content-Language" content="es">
+    <title>Pronóstico del tiempo</title>
+    <link rel="stylesheet" href="estilopronostico.css">
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="tabla.html">Tablas</a></li>
+          <li><a href="climagrama.html">Climagrama</a></li>
+          <li><a href="grafico.html">Grafico</a></li>
+          <li><a href="pronostico.html">Pronostico</a></li>
+        </ul>
+      </nav>
+    <div class="container">
+        <h1>Pronóstico del tiempo</h1>
+        <div class="current-weather">
+            <p >Nombre de la ciudad: <span class="nombre-ciudad"></span></p>
+            <p>Temperatura: <span class="temperatura"></span> &deg;C</p>
+            <p>Descripción: <span class="descripcion"></span></p>
+            <img class="icono" src="" alt="Icono del clima">
+        </div>
+        <h2>Pronóstico extendido</h2>
+        <ul class="pronostico-extendido">
+            <li id="dia1">
+                <p class="fecha"></p>
+                <img class="icono-dia1" src="" alt="Icono del clima">
+                <p class="temperatura"></p>
+                <p class="descripcion"></p>
+            </li>
+            <li id="dia2">
+                <p class="fecha"></p>
+                <img class="icono-dia2" src="" alt="Icono del clima">
+                <p class="temperatura"></p>
+                <p class="descripcion"></p>
+            </li>
+            <li id="dia3">
+                <p class="fecha"></p>
+                <img class="icono-dia3" src="" alt="Icono del clima">
+                <p class="temperatura"></p>
+                <p class="descripcion"></p>
+            </li>
+            <li id="dia4">
+                <p class="fecha"></p>
+                <img class="icono-dia4" src="" alt="Icono del clima">
+                <p class="temperatura"></p>
+                <p class="descripcion"></p>
+            </li>
+            <li id="dia5">
+                <p class="fecha"></p>
+                <img class="icono-dia5" src="" alt="Icono del clima">
+                <p class="temperatura"></p>
+                <p class="descripcion"></p>
+            </li>
+        </ul>
+    </div>
+    <script src="pronostico.js"></script>
+</body>
+</html>
