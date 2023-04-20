@@ -49,3 +49,43 @@ nav {
     background-color: #ddd;
     color: black;
   }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1em; /* Tamaño de fuente base */
+  }
+  
+  @media (max-width: 768px) {
+    /* Para pantallas más pequeñas que 768px de ancho */
+    table {
+      font-size: 0.8em; /* Reduce el tamaño de fuente */
+    }
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  td.MB {
+    background-color: green;
+  }
+  
+  td.B {
+    background-color: cyan;
+  }
+  
+  td.R {
+    background-color: pink;
+  }
+  
+  td.NA {
+    background-color: orange;
+  }
+  
