@@ -1,5 +1,3 @@
-
-
 function generarGrafico(temperaturas, humedades, deltas) {
   // Obtener el elemento canvas donde se mostrará el gráfico
   const canvas = document.getElementById('grafico');
@@ -10,11 +8,12 @@ function generarGrafico(temperaturas, humedades, deltas) {
     data: {
       datasets: [{
         label: 'Delta T vs. Temperatura y Humedad',
-        data: temperaturas.map((t, i) => ({x: t, y: humedades[i], r: 5, delta: deltas[i]})),
+        data: temperaturas.map((t, i) => ({x: t, y: humedades[i], r: 10, delta: deltas[i]})),
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         borderColor: 'rgba(0, 0, 0, 0.5)',
         borderWidth: 1,
-      }, ]
+        text: 'Delta T'
+      }]
     },
     options: {
       scales: {
@@ -42,11 +41,26 @@ function generarGrafico(temperaturas, humedades, deltas) {
               return `Delta T: ${context.dataset.data[context.dataIndex].delta.toFixed(1)}`;
             }
           }
+        },
+        hover: {
+          onHover: function(event, chartElement) {
+            event.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
+          },
+          onLeave: function(event, chartElement) {
+            event.target.style.cursor = 'default';
+          },
+          onClick: function(event, chartElement) {
+            if (chartElement[0]) {
+              const delta = chartElement[0].dataset.delta;
+              alert(`Delta T: ${delta.toFixed(1)}`);
+            }
+          }
         }
       }
     }
   });
 }
+
 
 
 function crearRayitasTiempo() {
