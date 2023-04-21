@@ -20,12 +20,14 @@ h2 {
     height: 200px;
     border: 2px solid black;
     border-radius: 50%;
-    top: 50%;
-    left: 42%;
+    top: 90px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+     
 }
 @media only screen and (max-width: 600px) {
     #brujula {
-      top: 50%;
+        top: 90px;
       left: 50%;
       transform: translate(-50%, -50%);
     }
