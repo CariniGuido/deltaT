@@ -14,14 +14,7 @@ function generarGrafico(temperaturas, humedades, deltas) {
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         borderColor: 'rgba(0, 0, 0, 0.5)',
         borderWidth: 1,
-      }, {
-        type: 'line',
-        label: 'Intersección',
-        data: [{x: Math.min(...temperaturas), y: Math.max(...humedades)}, {x: Math.max(...temperaturas), y: Math.min(...humedades)}],
-        backgroundColor: 'rgba(0, 0, 0, 0)',
-        borderColor: 'rgba(255, 0, 0, 1)',
-        borderWidth: 2,
-      }]
+      }, ]
     },
     options: {
       scales: {
