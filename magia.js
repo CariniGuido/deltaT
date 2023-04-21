@@ -1,3 +1,5 @@
+
+
 function generarGrafico(temperaturas, humedades, deltas) {
   // Obtener el elemento canvas donde se mostrará el gráfico
   const canvas = document.getElementById('grafico');
@@ -11,7 +13,14 @@ function generarGrafico(temperaturas, humedades, deltas) {
         data: temperaturas.map((t, i) => ({x: t, y: humedades[i], r: 5, delta: deltas[i]})),
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         borderColor: 'rgba(0, 0, 0, 0.5)',
-        borderWidth: 1
+        borderWidth: 1,
+      }, {
+        type: 'line',
+        label: 'Intersección',
+        data: [{x: Math.min(...temperaturas), y: Math.max(...humedades)}, {x: Math.max(...temperaturas), y: Math.min(...humedades)}],
+        backgroundColor: 'rgba(0, 0, 0, 0)',
+        borderColor: 'rgba(255, 0, 0, 1)',
+        borderWidth: 2,
       }]
     },
     options: {
@@ -45,6 +54,7 @@ function generarGrafico(temperaturas, humedades, deltas) {
     }
   });
 }
+
 
 function crearRayitasTiempo() {
     var rayitasTiempo = document.querySelector('.rayitas-tiempo');
@@ -131,13 +141,16 @@ if (deltaT >= 2 && deltaT <= 8) {
 
 document.getElementById("estadodelta").innerHTML = `El estado de Delta T es ${estadoDeltaT}.`;
     // Crear gráfico de Delta T con temperatura y humedad relativa
+    
+    
     const chartData = {
         labels: temperaturas,
         datasets: [{
             label: 'Delta T',
             data: deltas,
             borderColor: 'blue',
-            fill: false
+            fill: false,
+            spanGaps: true
         }]
     };
     const chartOptions = {
@@ -148,6 +161,7 @@ document.getElementById("estadodelta").innerHTML = `El estado de Delta T es ${es
                 }
             }]
         }
+        
     };
     const chart = new Chart(document.getElementById('chart'), {
         type: 'line',
