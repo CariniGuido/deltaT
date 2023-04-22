@@ -5,7 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
+<!-- Agrega las hojas de estilo de Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- Agrega la librería de jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<!-- Agrega los scripts de Bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
     <link rel="stylesheet" href="estilos.css">
 
@@ -18,15 +24,33 @@
 <body>
 
     
-    <nav>
-        <ul>
-            <li><a href="index.html">Diales</a></li>
-          <li><a href="tabla.html">Tablas</a></li>
-          <li><a href="climagrama.html">Climograma</a></li>
-          <li><a href="grafico.html">Grafico</a></li>
-          <li><a href="pronostico.html">Pronostico</a></li>
-          <li><a href="info.html">info</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Delta Time</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Diales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tabla.html">Tablas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="climagrama.html">Climograma</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="grafico.html">Grafico</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pronostico.html">Pronostico</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="info.html">info</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     <div class="tempe">
         <h2>Temperatura</h2>
